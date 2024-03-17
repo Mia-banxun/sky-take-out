@@ -33,4 +33,15 @@ public interface EmployeeMapper {
     分页查询
      */
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    /*
+    启用禁用员工
+     */
+    void update(Employee employee);
+
+    /*
+    根据ID查询员工
+     */
+    @Select("select * from employee where sky_take_out.employee.id = #{id}")
+    Employee getById(Long id);
 }
